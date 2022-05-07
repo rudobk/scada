@@ -1,0 +1,32 @@
+header {
+  background-image: linear-gradient(#a1c4fd, #c2e9fb);
+  padding-top: 10px !important;
+}
+.container {
+  text-align: center;
+  margin: auto;
+  padding: 10px;
+  vertical-align: middle;
+  max-width: 90% !important;
+}
+.sub-heading {
+  vertical-align: middle !important;
+}
+td {
+  vertical-align: middle !important;
+}
+#select-station {
+  color: #333333 !important;
+  padding: 4px 6px;
+  background-color: #eeeeee;
+  border: 1px solid #dddddd;
+  border-radius: 2px;
+  font-size: 20px;
+}
+#DataTables_Table_0_length {
+  color: blue !important;
+  text-align: left;
+}
+.top-heading {
+  color: rgb(150, 52, 93);
+}

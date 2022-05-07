@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Hệ Thống MET</title>
+    <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
+    <script src="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.js"></script>
+    <link rel="stylesheet" href="./css/styles.css" />
+    <link
+      href="https://api.mapbox.com/mapbox-gl-js/v2.8.1/mapbox-gl.css"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/navigate.css" />
+  </head>
+  <body>
+    <header>
+      <img src="/img/logo.svg" alt="logo" class="logo" />
+      <a class="manage-site" href="/about"
+        ><button class="nav-button">Thông Tin</button></a
+      >
+      <a class="about-us" href="/manage"
+        ><button class="nav-button">Quản Lý</button></a
+      >
+    </header>
+    <div class="wrapper">
+      <div class="widget-section">
+        <div class="container-1">
+          <div class="weather-side">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+              <h2 class="date-dayname" id="day-name">Tuesday</h2>
+              <span class="date-day" id="date-string">15 Jan 2019</span
+              ><i class="location-icon" data-feather="map-pin"></i
+              ><span class="location">Liên Chiểu, Đà Nẵng</span>
+            </div>
+            <div class="weather-container">
+              <i class="weather-icon" data-feather="sun"></i>
+              <h1 class="weather-temp" id="temp-value-1">29°C</h1>
+              <!-- <h3 class="weather-desc">Sunny</h3> -->
+            </div>
+          </div>
+          <div class="info-side">
+            <div class="today-info-container">
+              <div class="today-info">
+                <div class="humidity">
+                  <span class="title">LƯỢNG MƯA</span
+                  ><span class="value" id="rain-value-1">34 %</span>
+                  <div class="clear"></div>
+                </div>
+                <div class="wind">
+                  <span class="title">TỐC ĐỘ GIÓ</span
+                  ><span class="value" id="wind-value-1">0 km/h</span>
+                  <div class="clear"></div>
+                </div>
+                <div class="wind-oriental">
+                  <span class="title">HƯỚNG</span
+                  ><span class="value" id="wind-oriental-1">Đông Bắc</span>
+                  <div class="clear"></div>
+                </div>
+                <div class="view">
+                  <span class="title">TẦM NHÌN XA</span
+                  ><span class="value" id="view-1">Đông Bắc</span>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div class="container-2">
+          <div class="weather-side">
+            <div class="weather-gradient"></div>
+            <div class="date-container">
+              <h2 class="date-dayname" id="day-name-1">Tuesday</h2>
+              <span class="date-day" id="date-string-1">15 Jan 2019</span
+              ><i class="location-icon" data-feather="map-pin"></i
+              ><span class="location">Phú Lộc, Thừa Thiên Huế</span>
+            </div>
+            <div class="weather-container">
+              <i class="weather-icon" data-feather="sun"></i>
+              <h1 class="weather-temp" id="temp-value-2">29°C</h1>
+              <!-- <h3 class="weather-desc">Sunny</h3> -->
+            </div>
+          </div>
+          <div class="info-side">
+            <div class="today-info-container">
+              <div class="today-info">
+                <div class="humidity">
+                  <span class="title">LƯỢNG MƯA</span
+                  ><span class="value" id="rain-value-2">34 %</span>
+                  <div class="clear"></div>
+                </div>
+                <div class="wind">
+                  <span class="title">TỐC ĐỘ GIÓ</span
+                  ><span class="value" id="wind-value-2">0 km/h</span>
+                  <div class="clear"></div>
+                </div>
+                <div class="wind-oriental">
+                  <span class="title">HƯỚNG</span
+                  ><span class="value" id="wind-oriental-2">Đông Bắc</span>
+                  <div class="clear"></div>
+                </div>
+                <div class="view">
+                  <span class="title">TẦM NHÌN XA</span
+                  ><span class="value" id="view-2">Đông Bắc</span>
+                  <div class="clear"></div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div
+        id="map"
+        style="width: 90%; height: 400px; align-items: center; padding: 200px 40px;"
+      ></div>
+      <script>
+        mapboxgl.accessToken =
+          'pk.eyJ1IjoiYnJvZHpubzEiLCJhIjoiY2wyc2kxeDUxMGE0ZDNrbGIxNWJ4NmpwcyJ9.OuklT5WECdXSjdgDLJejyA';
+        const geojson = {
+          type: 'FeatureCollection',
+          features: [
+            {
+              type: 'Feature',
+              geometry: {
+                type: 'Point',
+                coordinates: [108.10726285724974, 16.16270653175303],
+              },
+              properties: {
+                name: 'Trạm Nam Hải Vân',
+                description: 'Nam Hải Vân',
+              },
+            },
+            {
+              type: 'Feature',
+              geometry: {
+                type: 'Point',
+                coordinates: [108.09209513384604, 16.21761221081546],
+              },
+              properties: {
+                name: 'Trạm Bắc Hải Vân',
+                description: 'Bắc Hải Vân',
+              },
+            },
+          ],
+        };
+        var map = new mapboxgl.Map({
+          container: 'map',
+          style: 'mapbox://styles/brodzno1/cl2sr6gup002x14pdun4g994x',
+        });
+        const bounds = new mapboxgl.LngLatBounds();
+        geojson.features.forEach((loc) => {
+          const el = document.createElement('div');
+          el.className = 'marker';
+
+          new mapboxgl.Marker({
+            element: el,
+            anchor: 'bottom',
+          })
+            .setLngLat(loc.geometry.coordinates)
+            .addTo(map);
+
+          new mapboxgl.Popup({
+            offset: 30,
+          })
+            .setLngLat(loc.geometry.coordinates)
+            .setHTML(
+              '<p style="text-align:center;">' +
+                loc.properties.description +
+                '</p>'
+            )
+            .addTo(map);
+          bounds.extend(loc.geometry.coordinates);
+        });
+        map.fitBounds(bounds, { padding: 110 });
+      </script>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="./js/info.js"></script>
+  </body>
+</html>

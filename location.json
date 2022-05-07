@@ -1,0 +1,27 @@
+{
+  "features": [
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [16.2217164, 108.0943473],
+        "type": "Point"
+      },
+
+      "properties": {
+        "title": "Bắc Hải Vân",
+        "description": "Trạm Bắc Hải Vân"
+      }
+    },
+    {
+      "type": "Feature",
+      "geometry": {
+        "coordinates": [16.1617306, 108.1073543],
+        "type": "Point"
+      },
+      "properties": {
+        "title": "Nam Hải Vân",
+        "description": "Trạm Nam Hải Vân"
+      }
+    }
+  ]
+}
