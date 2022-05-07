@@ -4,12 +4,14 @@ const morgan = require('morgan');
 const ejs = require('ejs');
 const compression = require('compression');
 const cookieParser = require('cookie-parser');
+
 const sensorRouter = require('./routes/sensorRoutes');
 const userRouter = require('./routes/userRoutes');
 const AppError = require('./utils/appError');
 const globalErrorHandler = require('./controllers/errorController');
 const { protect } = require('./controllers/userController');
 const viewRouter = require('./routes/viewRoutes');
+
 const app = express();
 
 app.use(express.static(path.join(__dirname, 'public')));

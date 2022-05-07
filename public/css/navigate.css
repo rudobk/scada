@@ -11,7 +11,9 @@ header {
   margin-right: auto;
   margin-top: 0px;
 }
-
+#logo-img {
+  margin-right: auto;
+}
 button {
   padding: 9px 25px;
   background-color: rgba(0, 136, 169, 1);
