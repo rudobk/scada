@@ -17,6 +17,12 @@ router.get('/about', (req, res) => {
   res.render('about');
 });
 
+router.get('/device', userController.isLoggedIn, (req, res) => {
+  if (res.locals.status === 'success') {
+    res.render('device');
+  } else res.redirect('/login');
+});
+
 router.get('/manage', userController.isLoggedIn, (req, res) => {
   if (res.locals.status === 'success') {
     res.render('overview');

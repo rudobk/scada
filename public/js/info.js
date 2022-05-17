@@ -52,20 +52,20 @@ function changeValue(data, id) {
   ).innerHTML = `${data.data[0].view.view} km`;
 }
 function checkDay(day) {
-  switch (day - 1) {
-    case 0:
-      return 'Thứ Hai';
+  switch (day) {
     case 1:
-      return 'Thứ Ba';
+      return 'Thứ Hai';
     case 2:
-      return 'Thứ Tư';
+      return 'Thứ Ba';
     case 3:
-      return 'Thứ Năm';
+      return 'Thứ Tư';
     case 4:
-      return 'Thứ Sáu';
+      return 'Thứ Năm';
     case 5:
-      return 'Thứ Bảy';
+      return 'Thứ Sáu';
     case 6:
+      return 'Thứ Bảy';
+    case 0:
       return 'Chủ Nhật';
     default:
       break;
@@ -103,3 +103,6 @@ function getData() {
 $(document).ready(function() {
   getData();
 });
+setInterval(function() {
+  getData();
+}, 30000);

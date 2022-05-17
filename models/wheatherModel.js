@@ -77,8 +77,37 @@ wheatherSchema.virtual('dateString').get(function() {
 
   return date.toLocaleDateString('vi');
 });
-wheatherSchema.post(/^find/, function(docs, next) {
-  next();
+wheatherSchema.virtual('OrientationString').get(function() {
+  let text = '';
+  switch (this.wind.wind_orientation_1m) {
+    case 1:
+      text = 'Bắc';
+      break;
+    case 2:
+      text = 'Đông Bắc';
+      break;
+    case 3:
+      text = 'Đông';
+      break;
+    case 4:
+      text = 'Đông Nam';
+      break;
+    case 5:
+      text = 'Nam';
+      break;
+    case 6:
+      text = 'Tây Nam';
+      break;
+    case 7:
+      text = 'Tây';
+      break;
+    case 8:
+      text = 'Tây Bắc';
+      break;
+    default:
+      break;
+  }
+  return text;
 });
 
 exports.Station1 = mongoose.model('Station1', wheatherSchema);

@@ -30,3 +30,13 @@ td {
 .top-heading {
   color: rgb(150, 52, 93);
 }
+label {
+  margin-left: 20px;
+}
+#datepicker {
+  width: 180px;
+  margin: 0 20px 20px 20px;
+}
+#datepicker > span:hover {
+  cursor: pointer;
+}
