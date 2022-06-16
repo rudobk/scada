@@ -1,163 +1,183 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
-    <!-- Design by foolishdeveloper.com -->
-    <title>Đăng Nhập</title>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Đăng nhập</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link
       rel="stylesheet"
-      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+      integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z"
+      crossorigin="anonymous"
     />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;600&display=swap"
-      rel="stylesheet"
-    />
-    <link rel="stylesheet" href="/css/navigate.css" />
-    <!--Stylesheet-->
     <style media="screen">
-      *,
-      *:before,
-      *:after {
-        padding: 0;
-        margin: 0;
-        box-sizing: border-box;
+      img {
+        width: 100%;
       }
-      body {
-        background-color: #080710;
+      .login {
+        height: 1000px;
+        width: 100%;
+        background: radial-gradient(#75afe9, #8ecacc);
+        /* position: relative; */
       }
-      .background {
-        width: 430px;
-        height: 520px;
+      .login_box {
+        width: 1050px;
+        height: 600px;
         position: absolute;
-        transform: translate(-50%, -50%);
-        left: 50%;
-        top: 50%;
-      }
-      .background .shape {
-        height: 200px;
-        width: 200px;
-        position: absolute;
-        border-radius: 50%;
-      }
-      .shape:first-child {
-        background: linear-gradient(#1845ad, #23a2f6);
-        left: -80px;
-        top: -80px;
-      }
-      .shape:last-child {
-        background: linear-gradient(to right, #ff512f, #f09819);
-        right: -30px;
-        bottom: -80px;
-      }
-      form {
-        height: 520px;
-        width: 400px;
-        background-color: rgba(255, 255, 255, 0.13);
-        position: absolute;
-        transform: translate(-50%, -50%);
         top: 50%;
         left: 50%;
+        transform: translate(-50%, -50%);
+        background: #fff;
         border-radius: 10px;
-        backdrop-filter: blur(10px);
-        border: 2px solid rgba(255, 255, 255, 0.1);
-        box-shadow: 0 0 40px rgba(8, 7, 16, 0.6);
-        padding: 50px 35px;
+        box-shadow: 1px 4px 22px -8px #0004;
+        display: flex;
+        overflow: hidden;
       }
-      form * {
-        font-family: 'Poppins', sans-serif;
-        color: #ffffff;
-        letter-spacing: 0.5px;
-        outline: none;
-        border: none;
+      .login_box .left {
+        width: 41%;
+        height: 100%;
+        padding: 25px 25px;
       }
-      form h3 {
-        font-size: 32px;
-        font-weight: 500;
-        line-height: 42px;
+      .login_box .right {
+        width: 59%;
+        height: 100%;
+      }
+      .left .top_link a {
+        color: #452a5a;
+        font-weight: 400;
+      }
+      .left .top_link {
+        height: 20px;
+      }
+      .left .contact {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        align-self: center;
+        height: 100%;
+        width: 73%;
+        margin: auto;
+      }
+      .left h3 {
         text-align: center;
+        margin-bottom: 40px;
+      }
+      .left input {
+        border: none;
+        width: 80%;
+        margin: 15px 0px;
+        border-bottom: 1px solid #4f30677d;
+        padding: 7px 9px;
+        width: 100%;
+        overflow: hidden;
+        background: transparent;
+        font-weight: 600;
+        font-size: 14px;
+      }
+      .left {
+        background: linear-gradient(-45deg, #dcd7e0, #fff);
+      }
+      .submit {
+        border: none;
+        padding: 15px 70px;
+        border-radius: 8px;
+        display: block;
+        margin: auto;
+        margin-top: 120px;
+        background: #583672;
+        color: #fff;
+        font-weight: bold;
+        -webkit-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+        -moz-box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
+        box-shadow: 0px 9px 15px -11px rgba(88, 54, 114, 1);
       }
 
-      label {
+      .right {
+        background: linear-gradient(
+            10deg,
+            rgba(209, 232, 242, 0.1) 0%,
+            rgba(160, 183, 229, 0.1) 100%
+          ),
+          url(/img/img22.jpg);
+        color: #fff;
+        position: relative;
+      }
+
+      .right .right-text {
+        height: 100%;
+        position: relative;
+        color: rgb(254, 254, 254);
+        transform: translate(0%, 45%);
+      }
+      .right-text h2 {
         display: block;
-        margin-top: 30px;
-        font-size: 16px;
+        width: 100%;
+        text-align: center;
+        font-size: 60px;
         font-weight: 500;
       }
-      input {
+      .right-text h5 {
         display: block;
-        height: 50px;
         width: 100%;
-        background-color: rgba(255, 255, 255, 0.07);
-        border-radius: 3px;
-        padding: 0 10px;
-        margin-top: 8px;
-        font-size: 14px;
-        font-weight: 300;
-      }
-      ::placeholder {
-        color: #e5e5e5;
-      }
-      #submit-btn {
-        margin-top: 50px;
-        width: 100%;
-        background-color: #ffffff;
-        color: #080710;
-        padding: 15px 0;
-        font-size: 18px;
-        font-weight: 600;
-        border-radius: 5px;
-        cursor: pointer;
-      }
-      .social {
-        margin-top: 30px;
-        display: flex;
-      }
-      .social div {
-        background: red;
-        width: 150px;
-        border-radius: 3px;
-        padding: 5px 10px 10px 5px;
-        background-color: rgba(255, 255, 255, 0.27);
-        color: #eaf0fb;
         text-align: center;
+        font-size: 24px;
+        font-weight: 400;
       }
-      .social div:hover {
-        background-color: rgba(255, 255, 255, 0.47);
+
+      .right .right-inductor {
+        position: absolute;
+        width: 70px;
+        height: 7px;
+        background: #fff0;
+        left: 50%;
+        bottom: 70px;
+        transform: translate(-50%, 0%);
       }
-      .social .fb {
-        margin-left: 25px;
-      }
-      .social i {
-        margin-right: 4px;
+      .top_link img {
+        width: 28px;
+        padding-right: 7px;
+        margin-top: -3px;
       }
     </style>
   </head>
   <body>
-    <header>
-      <img src="/img/logo.svg" alt="logo" class="logo" />
-    </header>
-    <div class="background">
-      <div class="shape"></div>
-      <div class="shape"></div>
-    </div>
-    <form id="form">
-      <h3>Đăng Nhập</h3>
-
-      <label for="username">Tài Khoản</label>
-      <input type="text" placeholder="Tên tài khoản" id="username" required />
-
-      <label for="password">Mật Khẩu</label>
-      <input
-        type="password"
-        placeholder="Mật khẩu"
-        id="password"
-        required
-        minlength="8"
-      />
-
-      <button type="submit" id="submit-btn">Đăng Nhập</button>
-    </form>
+    <section class="login">
+      <div class="login_box">
+        <div class="left">
+          <div class="top_link">
+            <a href="/"><img src="/img/left.svg" alt="" />Trang chủ</a>
+          </div>
+          <div class="contact">
+            <form action="">
+              <h3>Xin Chào</h3>
+              <input
+                type="text"
+                placeholder="Tài Khoản"
+                required
+                id="username"
+              />
+              <input
+                type="password"
+                placeholder="Mật Khẩu"
+                required
+                minlength="8"
+                id="password"
+              />
+              <button class="submit" id="submit-btn">Đăng Nhập</button>
+            </form>
+          </div>
+        </div>
+        <div class="right">
+          <div class="right-text">
+            <h2>NHÓM 7</h2>
+            <h5>SCADA Cho Hệ Thống Quan Trắc Thời Tiết</h5>
+          </div>
+          <!-- <div class="right-inductor"><img src="/img/wall1.jpg" alt="" /></div> -->
+        </div>
+      </div>
+    </section>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.27.2/axios.min.js"></script>
     <script src="/js/login.js"></script>
   </body>

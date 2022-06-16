@@ -1,5 +1,6 @@
 const button = document.getElementById('submit-btn');
 button.addEventListener('click', (e) => {
+  console.log('in login');
   e.preventDefault();
   const username = document.getElementById('username').value;
   const password = document.getElementById('password').value;
@@ -8,6 +9,7 @@ button.addEventListener('click', (e) => {
 
 const login = async (username, password) => {
   try {
+    console.log(username, password);
     const res = await axios({
       method: 'POST',
       url: '/api/user/login',
@@ -17,6 +19,7 @@ const login = async (username, password) => {
       },
     });
     // console.log('OK');
+    console.log(res);
     if (res.data.status === 'success') {
       alert('Đăng nhập thành công');
       window.setTimeout(() => {

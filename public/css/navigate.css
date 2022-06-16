@@ -21,8 +21,10 @@ button {
   cursor: pointer;
   margin-left: 10px;
   margin-right: 10px;
+  margin-top: auto;
   border-radius: 50px;
-  transition: all 0.3s ease 0s;
+  /* transition: all 0.3s ease 0s; */
+  transition: transform 0.5s;
   font-family: 'Montserrat', sans-serif;
   font-weight: 500;
   font-size: 16px;

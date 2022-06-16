@@ -25,6 +25,20 @@ $(document).ready(function() {
       { data: 'timeString' },
       { data: 'errorString' },
     ],
+    language: {
+      emptyTable: 'Không có dữ liệu',
+      info: 'Hiển thị _START_ - _END_ trong _TOTAL_ mục',
+      infoFiltered: '(lọc từ tất cả _MAX_ mục)',
+      lengthMenu: 'Hiển thị _MENU_ mục',
+      loadingRecords: 'Đang tải...',
+      processing: 'Đang xử lý...',
+      paginate: {
+        first: 'Đầu',
+        last: 'Cuối',
+        next: 'Tiếp',
+        previous: 'Trước',
+      },
+    },
   });
   $('.devicetable').DataTable({
     processing: true,
@@ -50,6 +64,37 @@ $(document).ready(function() {
       { data: 'windSensor' },
       { data: 'viewSensor' },
     ],
+    language: {
+      emptyTable: 'Không có dữ liệu',
+      info: 'Hiển thị _START_ - _END_ trong _TOTAL_ mục',
+      infoFiltered: '(lọc từ tất cả _MAX_ mục)',
+      lengthMenu: 'Hiển thị _MENU_ mục',
+      loadingRecords: 'Đang tải...',
+      processing: 'Đang xử lý...',
+      paginate: {
+        first: 'Đầu',
+        last: 'Cuối',
+        next: 'Tiếp',
+        previous: 'Trước',
+      },
+    },
+    createdRow: function(row, data, index) {
+      let i = 0;
+      for (key in data) {
+        if (data[key] === 'Lỗi!!!') {
+          $(`td:eq(${i})`, row).css(
+            'background-color',
+            'rgba(244, 39, 35, 0.8)'
+          );
+        } else {
+          $(`td:eq(${i})`, row).css(
+            'background-color',
+            'rgba(117, 202, 45, 0.8)'
+          );
+        }
+        i++;
+      }
+    },
   });
 });
 function dateFunction() {

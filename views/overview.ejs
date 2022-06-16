@@ -13,12 +13,17 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css"
     />
-    <title>Quản Lý MET</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
+    <title>Thông Số</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
     <link rel="stylesheet" href="./css/navigate.css" />
+    <link rel="stylesheet" href="./css/testnavigate.css" />
   </head>
   <body>
-    <header>
+    <!-- <header>
       <a href="/" id="logo-img"
         ><img src="/img/logo.svg" alt="logo" class="logo"
       /></a>
@@ -31,14 +36,52 @@
       <a class="about-us" href="/logout"
         ><button class="nav-button">Đăng Xuất</button></a
       >
-    </header>
+    </header> -->
+    <nav style="position: flex;">
+      <div class="brand">
+        <a href="/" id="logo-img"
+          ><img
+            src="/img/logo.svg"
+            alt="logo"
+            class="logo"
+            style="margin-top: 0;"
+        /></a>
+      </div>
+      <ul>
+        <li>
+          <a href="/"
+            ><i class="fa fa-home" aria-hidden="true"></i> Trang Chủ</a
+          >
+        </li>
+        <li>
+          <a href="/about"
+            ><i class="fa fa-users" aria-hidden="true"></i> Thành Viên</a
+          >
+        </li>
+        <li>
+          <a href="/manage"
+            ><i class="fa fa-info" aria-hidden="true"></i> Thông Số</a
+          >
+        </li>
+        <li active="true">
+          <a href="/device"
+            ><i class="fa fa-thermometer" aria-hidden="true"></i> Thiết Bị</a
+          >
+        </li>
+        <li>
+          <a href="/logout"
+            ><i class="fa fa-window-close" aria-hidden="true"></i> Đăng Xuất</a
+          >
+        </li>
+      </ul>
+    </nav>
     <div class="date-pick"></div>
 
     <div class="container mb-5 mt-3">
       <div style="margin-bottom: 10px;">
         <select id="select-station" onchange="stationChange();">
-          <option value="1">Trạm Hải Vân</option>
-          <option value="2">Trạm Hải Triều</option>
+          <option value="1">Trạm Bắc Hải Vân</option>
+          <option value="2">Trạm Nam Hải Vân</option>
         </select>
       </div>
       <div>
@@ -46,7 +89,12 @@
         <input type="date" id="min-date" name="min-date" />
         <label for="minDate">Đến ngày:</label>
         <input type="date" id="max-date" name="max-date" />
-        <input type="button" onclick="dateFunction()" value="Tìm Kiếm" />
+        <input
+          class="button-30"
+          type="button"
+          onclick="dateFunction()"
+          value="Tìm Kiếm"
+        />
       </div>
       <table
         class="table table-striped table-bordered mydatatable"
@@ -72,7 +120,7 @@
             </th>
             <th class="top-heading" colspan="4">Temperature (°C)</th>
             <th class="top-heading" colspan="2">Rain (mm)</th>
-            <th class="top-heading" colspan="2">Windy (m/s)</th>
+            <th class="top-heading" colspan="2">Wind (m/s)</th>
             <th class="top-heading" colspan="4">View (km)</th>
           </tr>
           <tr>

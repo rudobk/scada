@@ -66,7 +66,7 @@ exports.getData_test = catchAsync(async function(req, res, next) {
   if (req.params.station_id === '1') Station = Station1;
   else Station = Station2;
 
-  console.log(req.params.station_id);
+  // console.log(req.params.station_id);
   let minDate, maxDate;
   if (req.params.api_key !== process.env.API_KEY)
     return next(new AppError(400, 'API key mismatch'));
@@ -110,7 +110,7 @@ exports.getDeviceError = catchAsync(async function(req, res, next) {
   if (req.params.station_id === '1') Error = Error1;
   else Error = Error2;
 
-  console.log(req.params.station_id);
+  // console.log(req.params.station_id);
   let minDate, maxDate;
   if (req.params.api_key !== process.env.API_KEY)
     return next(new AppError(400, 'API key mismatch'));

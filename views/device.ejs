@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="./css/testnavigate.css" />
     <link rel="stylesheet" href="/css/main.css" />
     <link
       rel="stylesheet"
@@ -13,12 +14,16 @@
       rel="stylesheet"
       href="https://cdn.datatables.net/1.11.5/css/dataTables.bootstrap4.min.css"
     />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css"
+    />
     <title>Thiết Bị</title>
     <link rel="icon" type="image/x-icon" href="/img/favicon.ico" />
     <link rel="stylesheet" href="./css/navigate.css" />
   </head>
   <body>
-    <header>
+    <!-- <header>
       <a href="/" id="logo-img"
         ><img src="/img/logo.svg" alt="logo" class="logo"
       /></a>
@@ -31,7 +36,45 @@
       <a class="about-us" href="/logout"
         ><button class="nav-button">Đăng Xuất</button></a
       >
-    </header>
+    </header> -->
+    <nav style="position: flex;">
+      <div class="brand">
+        <a href="/" id="logo-img"
+          ><img
+            src="/img/logo.svg"
+            alt="logo"
+            class="logo"
+            style="margin-top: 0;"
+        /></a>
+      </div>
+      <ul>
+        <li>
+          <a href="/"
+            ><i class="fa fa-home" aria-hidden="true"></i> Trang Chủ</a
+          >
+        </li>
+        <li>
+          <a href="/about"
+            ><i class="fa fa-users" aria-hidden="true"></i> Thành Viên</a
+          >
+        </li>
+        <li>
+          <a href="/manage"
+            ><i class="fa fa-info" aria-hidden="true"></i> Thông Số</a
+          >
+        </li>
+        <li>
+          <a href="/device"
+            ><i class="fa fa-thermometer" aria-hidden="true"></i> Thiết Bị</a
+          >
+        </li>
+        <li>
+          <a href="/logout"
+            ><i class="fa fa-window-close" aria-hidden="true"></i> Đăng Xuất</a
+          >
+        </li>
+      </ul>
+    </nav>
     <div class="date-pick"></div>
 
     <div class="container mb-5 mt-3">
@@ -68,8 +111,8 @@
       >
         <thead>
           <tr>
-            <th class="top-heading">Date</th>
-            <th class="top-heading">Time</th>
+            <th class="top-heading">Ngày</th>
+            <th class="top-heading">Giờ</th>
             <th class="top-heading">Thông Tin</th>
           </tr>
         </thead>

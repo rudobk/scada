@@ -1,6 +1,18 @@
+body,
+html {
+  /* background-image: linear-gradient(#e0e9f9, #f2f2f2); */
+}
 header {
-  background-image: linear-gradient(#a1c4fd, #c2e9fb);
+  background-image: linear-gradient(to right, #a1c4fd, #c2e9fb);
+  /* background-image: linear-gradient(to right, #43cea2, #185a9d); */
   padding-top: 10px !important;
+}
+input[type='date'] {
+  background-color: rgb(248, 252, 251);
+  outline: none;
+}
+select {
+  background-color: rgb(248, 252, 251);
 }
 .container {
   text-align: center;
@@ -39,4 +51,52 @@ label {
 }
 #datepicker > span:hover {
   cursor: pointer;
+}
+.button-30 {
+  align-items: center;
+  appearance: none;
+  background-color: #fcfcfd;
+  border-radius: 2px;
+  border-width: 0;
+  box-shadow: rgba(45, 35, 66, 0.4) 0 1px 2px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  box-sizing: border-box;
+  color: #36395a;
+  cursor: pointer;
+  display: inline-flex;
+  font-family: 'JetBrains Mono', monospace;
+  height: 36px;
+  justify-content: center;
+  line-height: 1;
+  list-style: none;
+  overflow: hidden;
+  padding-left: 8px;
+  padding-right: 8px;
+  position: relative;
+  text-align: left;
+  text-decoration: none;
+  transition: box-shadow 0.15s, transform 0.15s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  white-space: nowrap;
+  will-change: box-shadow, transform;
+  font-size: 18px;
+  margin-left: 10px;
+}
+
+.button-30:focus {
+  box-shadow: #d6d6e7 0 0 0 1.5px inset, rgba(45, 35, 66, 0.4) 0 2px 4px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+}
+
+.button-30:hover {
+  box-shadow: rgba(45, 35, 66, 0.4) 0 4px 8px,
+    rgba(45, 35, 66, 0.3) 0 7px 13px -3px, #d6d6e7 0 -3px 0 inset;
+  transform: translateY(-2px);
+}
+
+.button-30:active {
+  box-shadow: #d6d6e7 0 3px 7px inset;
+  transform: translateY(2px);
 }
