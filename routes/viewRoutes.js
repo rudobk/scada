@@ -13,9 +13,9 @@ router.get('/', (req, res) => {
 router.get('/login', viewsController.getLogin);
 router.get('/logout', userController.logout);
 
-router.get('/about', (req, res) => {
-  res.render('about');
-});
+// router.get('/about', (req, res) => {
+//   res.render('about');
+// });
 
 router.get('/device', userController.isLoggedIn, (req, res) => {
   if (res.locals.status === 'success') {
